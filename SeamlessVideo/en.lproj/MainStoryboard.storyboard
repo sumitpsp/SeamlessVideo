@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="phonebooth.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3nV-Ar-vnH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="pna-tw-9hm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please wait for you phone call" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="0mq-N7-hfg">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="qLu-lT-3rZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x00-1Y-cHa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Qbe-Yg-PIM"/>
+                                    <constraint firstAttribute="width" constant="210" id="cIQ-c8-Ilk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Receive another call?" backgroundImage="green.jpg">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="receiveCallRequested:" destination="2" eventType="touchUpInside" id="rbQ-BR-wgP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x00-1Y-cHa" firstAttribute="top" secondItem="3nV-Ar-vnH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1bV-lj-qbL"/>
+                            <constraint firstItem="3nV-Ar-vnH" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="H5n-98-KRS"/>
+                            <constraint firstItem="0mq-N7-hfg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="HB2-ob-gIv"/>
+                            <constraint firstItem="3nV-Ar-vnH" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="TBo-iq-ish"/>
+                            <constraint firstItem="3nV-Ar-vnH" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="UsJ-SW-HGF"/>
+                            <constraint firstItem="x00-1Y-cHa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="51" id="dw7-fA-QxL"/>
+                            <constraint firstItem="0mq-N7-hfg" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="k0H-vp-HYs"/>
+                            <constraint firstAttribute="bottom" secondItem="0mq-N7-hfg" secondAttribute="bottom" constant="36" id="wNf-v8-G0k"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="message" destination="0mq-N7-hfg" id="l0z-ea-pnS"/>
+                        <outlet property="receiveCall" destination="x00-1Y-cHa" id="dNf-Cm-uB1"/>
+                        <segue destination="IAH-y1-h5e" kind="modal" identifier="call" id="BNB-Kt-96j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="-450"/>
+        </scene>
+        <!--Incoming Call View Controller-->
+        <scene sceneID="0SI-Pm-Gif">
+            <objects>
+                <viewController id="COf-S2-Ium" customClass="IncomingCallViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y6N-ob-kgN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="142-9p-628">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IR-F2-aAw">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Xiq-bM-ssT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                        <state key="normal" title="End Call" backgroundImage="red.jpg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smq-qt-GLc">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" backgroundImage="arrow-right3.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="smq-qt-GLc" secondAttribute="trailing" constant="10" id="88N-Dr-FUO"/>
+                                    <constraint firstItem="9IR-F2-aAw" firstAttribute="leading" secondItem="142-9p-628" secondAttribute="leading" type="default" id="CLV-8s-meb"/>
+                                    <constraint firstItem="9IR-F2-aAw" firstAttribute="top" secondItem="142-9p-628" secondAttribute="top" constant="479" id="EGW-6J-ae2"/>
+                                    <constraint firstItem="9IR-F2-aAw" firstAttribute="trailing" secondItem="142-9p-628" secondAttribute="trailing" type="default" id="brb-ZW-yZQ"/>
+                                    <constraint firstItem="smq-qt-GLc" firstAttribute="top" secondItem="142-9p-628" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qnz-GT-JGX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="142-9p-628" firstAttribute="top" secondItem="Y6N-ob-kgN" secondAttribute="top" type="default" id="7Aj-5b-CTY"/>
+                            <constraint firstAttribute="bottom" secondItem="142-9p-628" secondAttribute="bottom" constant="-2" id="Khq-p8-wMq"/>
+                            <constraint firstItem="142-9p-628" firstAttribute="leading" secondItem="Y6N-ob-kgN" secondAttribute="leading" type="default" id="SIb-Wo-VeK"/>
+                            <constraint firstItem="142-9p-628" firstAttribute="trailing" secondItem="Y6N-ob-kgN" secondAttribute="trailing" type="default" id="yHw-2T-D36"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEO-mg-KKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="220"/>
+        </scene>
+        <!--Incoming Call View Controller-->
+        <scene sceneID="van-s2-nL5">
+            <objects>
+                <viewController storyboardIdentifier="IncomingCall" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IAH-y1-h5e" customClass="IncomingCallViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fGx-RV-qO7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sumit.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-En-Ejh"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10G-Yb-H52">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ibo-kJ-BvG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Accept" backgroundImage="green.jpg">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptedCall:" destination="IAH-y1-h5e" eventType="touchUpInside" id="IKk-Xp-jTK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xh-e9-Q6y">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fuc-YC-o0N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Reject" backgroundImage="red.jpg">
+                                    <color key="titleColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rejectedCall:" destination="IAH-y1-h5e" eventType="touchUpInside" id="Int-pQ-WtE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sumit Pasupalak" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-0v-7Ql">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MyO-vG-TOd"/>
+                                    <constraint firstAttribute="width" constant="320" id="Wz2-Xu-ObJ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2xh-e9-Q6y" firstAttribute="trailing" secondItem="fGx-RV-qO7" secondAttribute="trailing" type="default" id="Azc-nQ-GIg"/>
+                            <constraint firstItem="10G-Yb-H52" firstAttribute="trailing" secondItem="fGx-RV-qO7" secondAttribute="trailing" type="default" id="CoF-J1-rU1"/>
+                            <constraint firstItem="XtW-0v-7Ql" firstAttribute="top" secondItem="fGx-RV-qO7" secondAttribute="top" constant="6" id="DUX-Xu-Dft"/>
+                            <constraint firstItem="XtW-0v-7Ql" firstAttribute="leading" secondItem="fGx-RV-qO7" secondAttribute="leading" constant="-5" id="Ezf-Gt-Jll"/>
+                            <constraint firstAttribute="bottom" secondItem="2xh-e9-Q6y" secondAttribute="bottom" constant="3" id="HIG-Hp-k2j"/>
+                            <constraint firstAttribute="bottom" secondItem="10G-Yb-H52" secondAttribute="bottom" constant="68" id="PPo-Em-fxK"/>
+                            <constraint firstItem="10G-Yb-H52" firstAttribute="leading" secondItem="fGx-RV-qO7" secondAttribute="leading" type="default" id="QKH-kA-aPt"/>
+                            <constraint firstItem="2xh-e9-Q6y" firstAttribute="leading" secondItem="fGx-RV-qO7" secondAttribute="leading" type="default" id="aUW-WP-IBN"/>
+                            <constraint firstItem="ftO-En-Ejh" firstAttribute="trailing" secondItem="fGx-RV-qO7" secondAttribute="trailing" type="default" id="b3N-eT-p91"/>
+                            <constraint firstItem="ftO-En-Ejh" firstAttribute="top" secondItem="fGx-RV-qO7" secondAttribute="top" type="default" id="huX-aK-LGU"/>
+                            <constraint firstItem="ftO-En-Ejh" firstAttribute="bottom" secondItem="fGx-RV-qO7" secondAttribute="bottom" type="default" id="jOr-EY-u3d"/>
+                            <constraint firstItem="ftO-En-Ejh" firstAttribute="leading" secondItem="fGx-RV-qO7" secondAttribute="leading" type="default" id="nuW-uo-bvl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accept" destination="10G-Yb-H52" id="2Y0-CM-00v"/>
+                        <outlet property="name" destination="XtW-0v-7Ql" id="8e3-Uq-R0y"/>
+                        <outlet property="reject" destination="2xh-e9-Q6y" id="whd-gh-7nZ"/>
+                        <segue destination="COf-S2-Ium" kind="modal" identifier="pickup" id="gyb-OR-g7C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8IL-sh-hVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="-470"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-right3.png" width="32" height="32"/>
+        <image name="green.jpg" width="798" height="744"/>
+        <image name="phonebooth.jpg" width="1000" height="1000"/>
+        <image name="red.jpg" width="804" height="786"/>
+        <image name="sumit.jpg" width="2448" height="3264"/>
+    </resources>
+    <classes>
+        <class className="IncomingCallViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IncomingCallViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="accept" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="device" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="reject" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="message" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="receiveCall" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
